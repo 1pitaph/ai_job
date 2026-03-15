@@ -1,0 +1,57 @@
+.canvas-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.canvas-left {
+  flex: 0 0 33.333%;
+  height: 100%;
+}
+
+.canvas-right {
+  flex: 0 0 66.667%;
+  overflow: hidden;
+  display: flex;
+}
+
+@media (max-width: 640px) {
+  .canvas-body {
+    flex-direction: column;
+  }
+
+  .canvas-left {
+    flex: 0 0 50%;
+    height: 50%;
+    width: 100%;
+  }
+
+  .canvas-right {
+    flex: 1;
+    height: 50%;
+    width: 100%;
+  }
+}
+
+.canvas-root {
+  --c-bg: #F5F5F5;
+  --c-white: #FFFFFF;
+  --c-black: #0D0D0D;
+  --c-gray: #787878;
+  --c-border: rgba(13, 13, 13, 0.10);
+  --c-blue: #3B82F6;
+  --c-green: #22C55E;
+  --c-purple: #A855F7;
+  --c-topbar-h: 65px;
+  --c-panel-w: 280px;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--c-bg);
+  font-family: var(--font-body);
+}

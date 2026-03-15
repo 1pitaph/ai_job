@@ -1,0 +1,205 @@
+.panel {
+  width: 100%;
+  flex-shrink: 0;
+  background: var(--c-white);
+  border-left: 1px solid var(--c-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tabBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 18px;
+  border-radius: 100px;
+  background: transparent;
+  color: var(--c-gray);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.tab:hover {
+  border-color: var(--c-border);
+  color: var(--c-black);
+}
+
+.tabActive {
+  background: var(--c-black);
+  color: var(--c-white);
+  border-color: var(--c-black);
+}
+
+.tabCustom {
+  margin-left: auto;
+}
+
+.tabActive:hover {
+  background: var(--c-black);
+  color: var(--c-white);
+  border-color: var(--c-black);
+}
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Resume upload form */
+.formSection {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.formTitle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--c-black);
+}
+
+.uploadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--c-gray);
+  padding: 4px 0;
+  transition: color 0.15s ease;
+}
+
+.uploadBtn:hover {
+  color: var(--c-black);
+}
+
+.formHint {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--c-gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 220px;
+  resize: vertical;
+  border: 1px solid var(--c-border);
+  border-radius: 10px;
+  background: rgba(13, 13, 13, 0.03);
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--c-black);
+  line-height: 1.6;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease;
+}
+
+.textarea::placeholder {
+  color: var(--c-gray);
+  opacity: 0.7;
+}
+
+.textarea:focus {
+  border-color: rgba(13, 13, 13, 0.25);
+}
+
+/* Action button */
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 14px;
+  border-radius: 100px;
+  background: var(--c-black);
+  color: var(--c-white);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.actionBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Result display */
+.resultBox {
+  background: rgba(13, 13, 13, 0.03);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.resultHeading {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--c-black);
+  margin: 8px 0 2px;
+}
+
+.resultHeading:first-child {
+  margin-top: 0;
+}
+
+.resultLine {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #444;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Error */
+.errorText {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #ef4444;
+  margin: 0;
+}
+
+/* Spin animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 0.8s linear infinite;
+}

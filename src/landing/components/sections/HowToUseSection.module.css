@@ -1,0 +1,259 @@
+.section {
+  padding: 80px 48px;
+  scroll-margin-top: 65px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--gray);
+  font-weight: 400;
+}
+
+/* Path container */
+.path {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 32px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+}
+
+/* Path header */
+.pathHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pathLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pathNum {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--border);
+  color: var(--gray);
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.pathNumActive {
+  background: var(--black);
+  color: var(--white);
+}
+
+.pathTitle {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--black);
+}
+
+.badgeStar {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badgeFlash {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: transparent;
+  color: var(--gray);
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid var(--border);
+}
+
+.ctaDark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.ctaDark:hover { opacity: 0.75; }
+
+.ctaLight {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: transparent;
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.ctaLight:hover { background: rgba(13,13,13,0.05); }
+
+/* Steps grid */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.stepCard {
+  background: var(--bg);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 160px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.stepCard:hover {
+  border-color: var(--border);
+}
+
+.stepLabel {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: var(--black);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  align-self: flex-start;
+}
+
+.stepIcon {
+  color: var(--black);
+  opacity: 0.5;
+}
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--black);
+  margin-top: auto;
+}
+
+.stepDesc {
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* Notes */
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.notes p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.notes p svg {
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+.notes strong {
+  color: var(--black);
+  font-weight: 600;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .section {
+    padding: 48px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .path {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+
+  .pathTitle {
+    font-size: 14px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .stepCard {
+    min-height: auto;
+  }
+}

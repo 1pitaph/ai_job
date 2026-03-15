@@ -1,0 +1,12 @@
+.pill {
+  padding: 8px 20px;
+  border-radius: 100px;
+  border: 1px solid rgba(13, 13, 13, 0.15);
+  background: #FFFFFF;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #787878;
+  white-space: nowrap;
+  box-shadow: 0 1px 4px rgba(13, 13, 13, 0.05);
+}

@@ -1,0 +1,17 @@
+.footer {
+  margin-top: auto;
+  padding: 0 48px 32px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin-bottom: 28px;
+}
+
+.copy {
+  font-size: 12px;
+  color: var(--gray);
+  font-weight: 400;
+  text-align: left;
+}

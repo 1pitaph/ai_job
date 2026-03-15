@@ -1,0 +1,102 @@
+.card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 18px 20px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid rgba(13, 13, 13, 0.08);
+  box-shadow: 0 2px 8px rgba(13, 13, 13, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(13, 13, 13, 0.09);
+}
+
+.cardSelected {
+  border-color: #0D0D0D;
+  box-shadow: 0 0 0 2px rgba(13, 13, 13, 0.12), 0 2px 8px rgba(13, 13, 13, 0.05);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.iconWrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(13, 13, 13, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #0D0D0D;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.title {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0D0D0D;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: #787878;
+  line-height: 1.5;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 100px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.badgeIdle {
+  background: rgba(13, 13, 13, 0.06);
+  color: #787878;
+}
+
+.badgeRunning {
+  background: rgba(59, 130, 246, 0.10);
+  color: #3B82F6;
+}
+
+.badgeDone {
+  background: rgba(34, 197, 94, 0.10);
+  color: #22C55E;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
