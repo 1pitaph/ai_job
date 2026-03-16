@@ -79,6 +79,101 @@
   opacity: 0.75;
 }
 
+.startBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.15s ease;
+}
+
+.startBtn:hover {
+  opacity: 0.75;
+}
+
+.avatarWrap {
+  position: relative;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.15s ease;
+}
+
+.avatar:hover {
+  opacity: 0.75;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 200px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 8px;
+  box-shadow: 0 8px 24px rgba(13, 13, 13, 0.1);
+  z-index: 200;
+  animation: dropIn 0.15s ease;
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.dropdownEmail {
+  padding: 8px 10px 10px;
+  font-size: 12px;
+  color: var(--gray);
+  word-break: break-all;
+}
+
+.dropdownDivider {
+  height: 1px;
+  background: var(--border);
+  margin: 0 0 6px;
+}
+
+.dropdownItem {
+  display: block;
+  width: 100%;
+  padding: 9px 10px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--black);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s ease;
+}
+
+.dropdownItem:hover {
+  background: rgba(13, 13, 13, 0.05);
+}
+
 @media (max-width: 640px) {
   .nav {
     padding: 16px 20px;

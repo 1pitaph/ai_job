@@ -1,3 +1,8 @@
+import { useState, useRef, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Play } from 'lucide-react'
+import { useAuth } from '../../../auth/AuthContext'
+import { supabase } from '../../../lib/supabase'
 import styles from './Navbar.module.css'
 
 const NAVBAR_HEIGHT = 65
@@ -35,6 +40,29 @@ function handleNav(e, targetId) {
 }
 
 export default function Navbar({ onLogin, onGetStarted }) {
+  const navigate = useNavigate()
+  const { user } = useAuth()
+  const [open, setOpen] = useState(false)
+  const dropdownRef = useRef(null)
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    function onClick(e) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', onClick)
+    return () => document.removeEventListener('mousedown', onClick)
+  }, [])
+
+  async function handleSignOut() {
+    await supabase.auth.signOut()
+    setOpen(false)
+  }
+
+  const avatarLetter = user?.email?.[0]?.toUpperCase() ?? '?'
+
   return (
     <nav className={styles.nav}>
       <div className={styles.logo}>
@@ -45,8 +73,35 @@ export default function Navbar({ onLogin, onGetStarted }) {
         <li><a href="#about" onClick={(e) => handleNav(e, 'about')}>About</a></li>
       </ul>
       <div className={styles.actions}>
-        <button className={styles.login} onClick={onLogin}>Log in</button>
-        <button className={styles.cta} onClick={onGetStarted}>Get Started</button>
+        {user ? (
+          <>
+            <button className={styles.startBtn} onClick={() => navigate('/canvas')} title="开始">
+              <Play size={14} strokeWidth={2} fill="currentColor" />
+            </button>
+            <div className={styles.avatarWrap} ref={dropdownRef}>
+              <button className={styles.avatar} onClick={() => setOpen(v => !v)}>
+                {avatarLetter}
+              </button>
+              {open && (
+                <div className={styles.dropdown}>
+                  <div className={styles.dropdownEmail}>{user.email}</div>
+                  <div className={styles.dropdownDivider} />
+                  <button className={styles.dropdownItem} onClick={() => { navigate('/canvas'); setOpen(false) }}>
+                    进入工作台
+                  </button>
+                  <button className={styles.dropdownItem} onClick={handleSignOut}>
+                    退出登录
+                  </button>
+                </div>
+              )}
+            </div>
+          </>
+        ) : (
+          <>
+            <button className={styles.login} onClick={onLogin}>Log in</button>
+            <button className={styles.cta} onClick={onGetStarted}>Get Started</button>
+          </>
+        )}
       </div>
     </nav>
   )
